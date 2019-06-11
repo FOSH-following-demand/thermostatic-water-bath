@@ -8,7 +8,7 @@ But, the advantage of using these cells, is that if we reverse the polarity, we 
 Therefore, we would have a thermostatic bath capable of generating heat or cold without modifying its design or changing any part.
 The project will consist of a control circuit, the design of the same and the construction of the storage box.
 Microcontrollers based on the ATMEGA328p will be used primarily for first tests and calibration of the sensors.
-After that is made, the goal will be to use one "We Mos D1 Mini" board as the main controller, and as a addon, the capable of connecting to cayenne web services as monitor and remote controller using MQTT and IoT Technology.
+After that is made, the goal will be to use one "We Mos D1 Mini" board as the main controller, and as a addon, the capable of connecting to cayenne web services as monitor and remote controller using IoT Technology.
 
 
 The electrical resistances if they do not have water are burned (If they do not have electronic protection circuits, which is usual)
