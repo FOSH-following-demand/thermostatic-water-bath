@@ -11,14 +11,14 @@
 <br>
 
 2. List of materials needed:
- - In the form of a table, containing part name, quantity and a couple of words on what they do. Extra points if the parts are divided according to the building steps (below)
- - Remember to include the tools necessary as well! (pliers, saw, computer, etc)  
 
-
- |part name| function  | quantity  | build step  | obs.  |
+ |Part name| Function  | Quantity  | Build step  | Obs.  |
+ | Peltier Cell | Cool and Heat | 1 |not defined yet| not defined yet |
+ | VNH3SP30 | Controller for the peltier | 1 | not defined yet | not defined yet|
+ | AMD Processor Heatsink | For Side B of the Peltier cell | 1 | not defined yet| not defined yet |
+ |Piler|Cut and wire cables|1|0|not defined yet|
  |---|---|---|---|---|
- |LM2596| voltage regulator  | 2  | 3  | these could be substituted by XX  |
- | Nose needle Pliers  | hold components while soldering  | 1  | all steps  | regular pliers would also work  |
+ |---|---|---|---|---|
 
 <br>
 
@@ -31,4 +31,3 @@
 
 4. Last checks before powering up/using for the first time:
  - Could people do one more check of everything before powering up things? Maybe double check that the capacitors were soldered in the proper orientation? Make sure there are no cut metal parts shorting the bottom side of the PCB? Make sure the area around the equipment is clear and won't be hit if the equipment has moving parts (eg shakers, centrifuges, etc).
- 
