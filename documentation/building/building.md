@@ -1,6 +1,5 @@
 
-**Use this folder to create files for building instructions:**
-- Each equipment is going to have a different building process, but here are some suggestions on how to organise things:
+***Building instructions:***
 
 <br>
 
@@ -12,19 +11,17 @@
 
 2. List of materials needed:
 
- |Part name| Function  | Quantity  | Build step  | Obs.  |
- | Peltier Cell | Cool and Heat | 1 |not defined yet| not defined yet |
- | VNH3SP30 | Controller for the peltier | 1 | not defined yet | not defined yet|
- | AMD Processor Heatsink | For Side B of the Peltier cell | 1 | not defined yet| not defined yet |
- |Piler|Cut and wire cables|1|0|not defined yet|
+ |part name| function  | quantity  | build step  | obs.  |
  |---|---|---|---|---|
- |---|---|---|---|---|
+ |LM2596| voltage regulator  | 2  | 3  | these could be substituted by XX  |
+ | Nose needle Pliers  | hold components while soldering  | 1  | all steps  | regular pliers would also work  |
 
 <br>
 
 
 3. build steps:
  - Divide this section in as many subparts as you like and try to be as clear as possible. Would someone seeing the whole thing for the first time be able to build it? (it is a good exercise to oversee someone building the equipment using only your written/video/figure instructions)
+
  - Is a video a better way to instruct people how to use it? try to keep the file size as small as possible without compromising quality. Also reach out to us, as a good idea might be to create a different repository for the video files.  
 
 <br>
