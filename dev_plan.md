@@ -1,7 +1,5 @@
 # Development plan
 
-Use this file to store your plan for the program. What are you going to do, in which order? 
-
 | Week        | Activities           | Who           |
 | ----------- | -------------------- | ------------- |
 | 1           |                      |               |
