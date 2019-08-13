@@ -1,6 +1,6 @@
-Two libraries are currently being used, possibly 2 more would be missing, to improve the code.
-one is called "Peltier" and the other is called "lcdScreen"
-Both are designed to simplify the Arduino code and not make it so tedious to read and understand in order to modify it.
+_Two libraries_ are currently being used, possibly 2 more would be missing, to improve the code.
+
+One is called "__Peltier__" and the other is called "__lcdScreen__", both are designed to simplify the Arduino code and not make it so tedious to read and understand in order to modify it.
 
 In effect, the libraries have given more work time since they needed a lot of testing and debugging,
 
@@ -10,7 +10,7 @@ In addition to the challenge of using peltier cells for the thermostatic bath, w
 
 Now we continue with the description of the libraries
 
-# Available Commands:
+# Available Commands on
 - Peltier Library
 
 ```
@@ -32,15 +32,15 @@ You have two options, one is to use a Driver as we will suggest later, although 
 - LCD Screen Library
 ```
   bool initThis(char addr, int rows);
-  
+
   bool turnOff();
-  
+
   bool setActualTemp(float num);
-  
+
   bool setCurrent(float amps);
-  
+
   bool setEndTemp(float set);
 ```
 This library facilitates the assembly of the user interface on the LCD screen (small GUI), it can be 16x02 or 20x4, both can be set in the library and thus automatically accommodate the parameters on the screen.
 
-The connections and lcdScreen library will be put shortly
+The connections and lcdScreen library will be put shortly, after solving some short-circuit problems in the code :suspect:

@@ -13,7 +13,7 @@ Therefore, we would have a thermostatic bath capable of generating heat or cold 
 
 The project will consist of a control circuit, the design of the same and the construction of the storage box.
 
-The microcontrollers based on the __ATMEGA328p__ [link](https://store.arduino.cc/usa/arduino-uno-rev3) will be used mainly for the first tests and the calibration of the sensors.
+The microcontrollers based on the [ATMEGA328p](https://store.arduino.cc/usa/arduino-uno-rev3) will be used mainly for the first tests and the calibration of the sensors.
 Once this is done, the objective will be to use a "We Mos D1 Mini" board as the main controller and, as a complement, the ability to connect to Cayenne web services as a monitor and remote control through IoT technology.
 
 The electric resistors if they do not have water are burned (if they do not have electronic protection circuits, as usual), with the design proposed in this project, we will try to avoid it by measuring the current that the cell consumes, so we can determine, without using another type of sensors, if the container where the piece is located, has enough distilled water or refrigerant (in case you want to cool)
