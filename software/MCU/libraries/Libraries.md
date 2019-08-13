@@ -1,1 +1,3 @@
-### use this folder to add your libraries. If possible create subrepos from the original libraries you used.
+# libraries
+
+Here we are going to put everything about the libraries, as examples and typical applications.
