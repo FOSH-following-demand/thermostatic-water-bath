@@ -26,7 +26,7 @@ Once this is done (by the way, you can check the code [here](https://github.com/
 
 The electric resistors if they do not have water are burned (if they do not have electronic protection circuits, as usual), with the design proposed in this project, we will try to avoid it by measuring the current that the cell consumes, so we can determine, without using another type of sensors, like a __DS18B20__ ([datasheet here](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)), if the container where the piece is located, has enough distilled water or refrigerant (in case you want to cool).
 
-There is a lot of variety in terms of quality of Peltier cells, qualities and ways to get it (For example, Amazon, eBay or AliExpress), we have been guided by a Chinese manufacturer [link](https://peltiermodules.com/) that poorly describes the characteristics of your product, but when we go to The tests, performs correctly based on your datasheet.
+There is a lot of variety of Peltier cells, qualities and ways to get it (For example, Amazon, eBay or AliExpress), we have been guided by a Chinese manufacturer ([link here](https://peltiermodules.com/)) that poorly describes the characteristics of the product, but when we go to the tests, it performs correctly based on the datasheet.
 
 In our studies, we used a Peltier Cell [TEC-12705](https://peltiermodules.com/peltier.datasheet/TEC1-12705.pdf) to start, after many thorough tests, we realized that it would not be able to maintain and heat quickly the water.
 
