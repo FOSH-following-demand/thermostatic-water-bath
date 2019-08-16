@@ -1,1 +1,3 @@
-## use this folder to add the libraries necessary for the GUI, in case any.
+## There is no library required to the GUI's... Yet
+
+:godmode:
