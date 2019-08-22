@@ -46,8 +46,30 @@
 
 ### 3. build steps:
   * 3.a : Connect the OUT1A of the VNH3SP30 Driver to the _Black_ wire of the Peltier element.
+
   * 3.b : Connect the OUT1B of the VNH3SP30 Driver to the _Red_ wire of the Peltier element.
+
+  * 3.c : Connect the EN of the VNH3SP30 Driver to the _Digital Pin 6_ wire of the Arduino UNO.
+
+  * 3.d : Connect the INA of the VNH3SP30 Driver to the _Digital Pin 4_ wire of the Arduino UNO.
+
+  * 3.e : Connect the INB of the VNH3SP30 Driver to the _Digital Pin 7_ wire of the Arduino UNO.
+
+  * 3.f : Connect the PWM of the VNH3SP30 Driver to the _Digital Pin 5_ wire of the Arduino UNO.
+
+  * 3.g : Connect the SDA of the lcdScreen to the _Analog input 4_ wire of the Arduino UNO.
+
+  * 3.h : Connect the SCL of the lcdScreen to the _Analog input 5_ wire of the Arduino UNO.
+
+  * 3.i : Connect the DQ of the DS18B20 to the _Digital Pin 9_ wire of the Arduino UNO.
+
+  * 3.j : __Connect all the Ground pins of the lcdScreen and the DS18B20, and from the VNH3SP30__
+
+  * 3.k : Connect all the 5v rails of the lcdScreen, the __DS18B20 with the 4,7K in parallel with DQ and VDD__ and the VNH3SP30, as shown in the schematic.
+
+  * 3.l : Plug in the arduino uno and proceed to upload the sketch as showed below.
 
 <br>
 
 ### 4. Last checks before powering up/using for the first time:
+  __DO NOT POWER WITH 12v the peltier module without Heatsink !! it may burn you or cause damage to the driver.__
