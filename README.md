@@ -7,7 +7,6 @@
 <a href="https://tecsci.com.ar/" title="Technology for Science"><img src="https://raw.githubusercontent.com/FOSH-following-demand/thermostatic-wather-bath/master/tecsciLogo.png"></a>
 
 
-
 In testing laboratories, it is always useful to keep reagents or tests that are analyzed at certain temperatures.
 A _thermostatic bath_ is a device designed to maintain and stabilize the temperature of the objects that enter it.
 
@@ -32,6 +31,23 @@ In our studies, we used a Peltier Cell [TEC-12705](https://peltiermodules.com/pe
 
 therefore, after a week of continuous tests, we change to a _new cell_, in this case, the [TEC-12715](https://peltiermodules.com/peltier.datasheet/TEC1-12715.pdf), which may seem a little bigger than the 12705, but while the 12705 is __50W__, the 12715 is __150W__!
 
-We had to get a more powerful 12v power supply, which are frequently used in DVR cameras, approximately 30A of peak current
+We had to get a more powerful 12v power supply, which are frequently used in DVR cameras, approximately 29A of peak current, to improve the power.
+
+We have managed to stabilize the temperature adequately in the range of + - 0.1 ° C, which makes us proud for a prototype made practically of the study of the elements of peltier, of a limited knowledge and time for research! here are some [results](https://docs.google.com/spreadsheets/d/14x8ajXjDDJAvYHkvkYrGuCvhuu2BmfRY7JI32HTowtU/edit?usp=sharing).
+
+[here](https://docs.google.com/spreadsheets/d/1heXNcq8TzLmtxA4aUKqf4gO-YtcK64AZdO5G_QmcZ0U/edit?usp=sharing) is the most complete example on the peltier usage.
+
+<a href="Large Test" title="Sample image of the peltier element"><img src="https://raw.githubusercontent.com/FOSH-following-demand/thermostatic-wather-bath/master/largeTest.png"></a>
+
+As we move forward, we will be contributing more and more things to the repository (since I also had,juanstdio to learn how to use the powerful Git tool to upload to the repository).
+
+
+### Construction and Building
+
+  To continue with the _Building of Electronics_, please follow this [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/documentation/building)
+
+  To continue with the _Building of the Hardware_, please follow this another [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/hardware/BOM/BOM.md)
+
+  To continue with the _Installation of Sofware_, please follow this [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/software/MCU)
 
 by [_@juanstdio_ ](https://github.com/juanstdio)
