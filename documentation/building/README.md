@@ -24,7 +24,7 @@ _How to upload the code to the arduino?_
 
   if everything is correct, and the arduino is correcly connected based on the schematics, you can upload the code using the right arrow :arrow_right:
 
-  __WARNING:__  Make sure than you selected the correct _microcontroller_ in the selection menu, as showned here
+  __WARNING:__:warning:  Make sure than you selected the correct _microcontroller_ in the selection menu, as showned here
   <a href="https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/software/MCU" title="scr0"><img src="https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/documentation/building/pictures/scr3.png?raw=true"></a>
 
   After that, you'll see the current temperature in the monitor of the Arduino Serial Monitor (you can use _crtl + shift + m_ as direct access) as showned on the end of the video.
@@ -45,7 +45,7 @@ _How to upload the code to the arduino?_
 
   * Heat Sink Grease
 
-### 3. build steps:
+### 3. Build steps:
   * 3.a : Connect the OUT1A of the VNH3SP30 Driver to the _Black_ wire of the Peltier element.
 
   * 3.b : Connect the OUT1B of the VNH3SP30 Driver to the _Red_ wire of the Peltier element.
@@ -73,4 +73,4 @@ _How to upload the code to the arduino?_
 <br>
 
 ### 4. Last checks before powering up/using for the first time:
-  __DO NOT POWER WITH 12v the peltier module without Heatsink !! it may burn you or cause damage to the driver.__
+  :warning: :warning: __DO NOT POWER WITH 12v the peltier module without Heatsink !! it may burn your skii or cause damage to the driver.__ :warning: :warning:
