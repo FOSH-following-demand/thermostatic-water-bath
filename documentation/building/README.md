@@ -10,8 +10,7 @@
   After cloning or downloading all the package, you'll download the last version of the code (_actually is 0.0.2_).
   Now, you will open the arduino IDE and load the version
 
-  <video src="out.mp4" width="320" height="200" controls preload> </video>
-
+![Video](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/documentation/building/out.gif)
 
 
 2. List of materials needed:
