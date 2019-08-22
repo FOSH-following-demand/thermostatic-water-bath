@@ -48,6 +48,6 @@ As we move forward, we will be contributing more and more things to the reposito
 
   To continue with the _Building of the Hardware_, please follow this another [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/hardware/BOM/BOM.md)
 
-  To continue with the _Installation of Sofware_, please follow this [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/software/MCU)
+  To continue with the _Installation of Software_, please follow this [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/software/MCU)
 
 by [_@juanstdio_ ](https://github.com/juanstdio)
