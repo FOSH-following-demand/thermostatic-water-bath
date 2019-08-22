@@ -10,7 +10,7 @@
   After cloning or downloading all the package, you'll download the last version of the code (_actually is 0.0.2_).
   Now, you will open the arduino IDE and load the version
 
-  <video src="video.mp4" width="320" height="200" controls preload> </video>
+  <video src="out.ogv" width="320" height="200" controls preload> </video>
 
 
 
