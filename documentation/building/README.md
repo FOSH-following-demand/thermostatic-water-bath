@@ -32,10 +32,21 @@
 
 
 ### 2. List of materials needed:
+  for the main electronics, We'll need the follwoing, as described [here](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/hardware/datasheets/datasheets.md) in the electronics datasheets files.
 
+  * VNH3SP30 Motor Driver
 
+  * TEC1-12715 Peltier Cell
+
+  * Power Supply 12v 29A Pronext or equivalent.
+
+  * Arduino UNO Rev 3
+
+  * Heat Sink Grease
 
 ### 3. build steps:
+  * 3.a : Connect the OUT1A of the VNH3SP30 Driver to the _Black_ wire of the Peltier element.
+  * 3.b : Connect the OUT1B of the VNH3SP30 Driver to the _Red_ wire of the Peltier element.
 
 <br>
 
