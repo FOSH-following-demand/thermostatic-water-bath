@@ -1,11 +1,9 @@
 #### How to use the system
 
-# First test
-
 1. __Getting started__
-  When you upload the code to the Arduino, showned in the [building process](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/documentation/building/building.md)
+  When you upload the code to the Arduino, showned in the [building process](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/documentation/building/README.md), follow this steps
 
-2. Turning everything on, making sure it is functioning as it should.
+2. Connect all the wires, as showned in the wiring diagram.
 
 3. calibration steps
 
