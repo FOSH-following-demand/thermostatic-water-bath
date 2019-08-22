@@ -1,16 +1,12 @@
-#### use this document to guide people on using this device.
+#### How to use the system
 
-Some guidelines on what to put in this document:
+# First test
 
-1. Getting started
-
- - what the device should look like, things to prepare and watch out for before turning it on.
-
+1. __Getting started__
+  When you upload the code to the Arduino, showned in the [building process](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/documentation/building/building.md)
 
 2. Turning everything on, making sure it is functioning as it should.
 
 3. calibration steps
 
 4. maintenance/storage information.
-
-   
