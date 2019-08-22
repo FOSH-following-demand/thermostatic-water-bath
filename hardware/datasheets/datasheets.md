@@ -1,3 +1,12 @@
-#### Add to this folder all the datasheets used in the build.
+#### Datasheet for the Thermostatic water bath
 
-This will make it easier for people to learn what each part is doing in case they need to substitute parts. 
+Here we left the datasheets of the components than we used
+
+*VNH3SP30 Motor Driver
+
+*TEC1-12715 Peltier Cell
+
+*Power Supply 12v 29A Pronext 
+
+* Arduino UNO
+
