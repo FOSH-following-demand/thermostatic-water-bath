@@ -6,8 +6,7 @@
 
   2. __if you only want to test, please follow this__ [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/hardware/testing)
 
-  3. __calibration steps__
-    
+  3. __calibration steps__ _in progress of writing it_
 
 
-  4. maintenance/storage information.
+  4. maintenance/storage information. _WorkInProgress_

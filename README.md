@@ -1,6 +1,6 @@
 
 # Open Source Thermostatic Water Bath 
-<a href="https://github.com/FOSH-following-demand/thermostatic-wather-bath" title="Thermostatic wather Bath"><img src="https://img.shields.io/badge/Version-0.0.7-yellow.svg"></a>
+<a href="https://github.com/FOSH-following-demand/thermostatic-wather-bath" title="Thermostatic wather Bath"><img src="https://img.shields.io/badge/Version-0.0.2-yellow"></a>
 <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" title="GNU V3 Licence"><img src="https://img.shields.io/badge/Licence-GNU%20V3-red.svg"></a>
 
 ### Welcome!
@@ -10,7 +10,7 @@
 In testing laboratories, it is always useful to keep reagents or tests that are analyzed at certain temperatures.
 A _thermostatic bath_ is a device designed to maintain and stabilize the temperature of the objects that enter it.
 
-In general, the thermostatic baths are composed of electric heaters that heat the distilled water and, when they reach a certain temperature, they are automatically disconnected from the energy.
+In general, they are composed of electric heaters that heat the distilled water and, when they reach a certain temperature, they are automatically disconnected from the energy.
 
 Our idea is to use efficiency and solidity as a basis, so we will use Peltier cells to take advantage of the Peltier effect, which is normally used as a thermoelectric coolant.
 
@@ -50,4 +50,4 @@ As we move forward, we will be contributing more and more things to the reposito
 
   To continue with the _Installation of Software_, please follow this [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/software/MCU)
 
-by [_@juanstdio_ ](https://github.com/juanstdio)
+by [TECSCI](https://github.com/tecsci)
