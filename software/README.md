@@ -14,7 +14,7 @@ Now we continue with the description of the libraries
 - Peltier Library
 
 ```
-void createPeltier(uint8_t A,uint8_t B,uint8_t E, uint8_t pwm);
+createPeltier(uint8_t A,uint8_t B,uint8_t E, uint8_t pwm);
 
 void coolFast();
 
@@ -31,7 +31,7 @@ You have two options, one is to use a Driver as we will suggest later, although 
 
 - LCD Screen Library
 ```
-  bool initThis(char addr, int rows);
+  initThis(char addr, int rows);
 
   bool turnOff();
 
