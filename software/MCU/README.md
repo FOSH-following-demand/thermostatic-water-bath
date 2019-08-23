@@ -23,7 +23,7 @@
   * peltier library was _included_ in the folder, and updated in the __library__ folder
   * First program to use object-orientated peltier functions.
 
-# how to work with this programs?
+# How to work with this programs?
 
 To test this sketch's, you must install the library included in the arduino database.
 
