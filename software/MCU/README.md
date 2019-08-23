@@ -1,9 +1,9 @@
-# Code of the Arduino UNO
+# Version history
+
 <a href="First Version" title="First Version"><img src="https://img.shields.io/badge/first%20version-0.0.1-brightgreen"></a>
 
 <a href="Actual Version" title="Actual Version"><img src="https://img.shields.io/badge/Actual%20Version-0.0.2-green"></a>
 
-# Version history
 
 ### Program 0.0.1
   First version of the software
@@ -23,6 +23,7 @@
   * peltier library was _included_ in the folder, and updated in the __library__ folder
   * First program to use object-orientated peltier functions.
 
+# how to work with this programs?
 
 To test this sketch's, you must install the library included in the arduino database.
 
