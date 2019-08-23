@@ -2,7 +2,7 @@
 
 This video made with a thermal camera shows us what the system is capable of.
 
-(Sorry, the video break the git system) :(
+![Video](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/hardware/flirImage.gif)
 
 The settings that have been made for this video correspond to the software version 0.0.2
 
