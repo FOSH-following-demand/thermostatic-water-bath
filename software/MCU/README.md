@@ -1,6 +1,8 @@
 # Code of the Arduino UNO
 <a href="First Version" title="First Version"><img src="https://img.shields.io/badge/first%20version-0.0.1-brightgreen"></a>
 
+<a href="Actual Version" title="Actual Version"><img src="https://img.shields.io/badge/Actual%20Version-0.0.2-green"></a>
+
 To test this code, you must install the library included in the arduino database.
 
 in order to do this, let's go to Library Manager of the __Arduino IDE__, located in
