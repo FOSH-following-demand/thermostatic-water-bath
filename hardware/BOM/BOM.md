@@ -8,12 +8,10 @@ We recommend creating different files:
 <br>
 
 
-| Reference | Qty  | Description | manufacturer  |MPN|manufacturer_1  |MPN_2|manufacturer_3  |MPN_4|manufacturer_5 |MPN_6|manufacturer_7  |MPN_8|Digikey|Mouser|RS|Newark|Farnell|
+| Reference | Qty  | Description | manufacturer  |MPN |Digikey|Mouser|RS|Newark|Farnell|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|R7; R8; R9  | 3  | 	Resistor 220 ohm 250mW through-hole   |    Yageo   |MFR-25FBF52-220R |TE Connectivity |CBT25J220R|TE Connectivity|	CFR16J220R|	Ohmite|	OD221JE|Stackpole Electronics |CF14JT220R|CF14JT220RCT-ND|279CBT25J220R|8066376|	21R0186 |	1265068|
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|Peltier 150W TEC1-12715  |  1  | 12v 150w peltier TEC1-12715 | DUAITEK | PELTIER-TEC1-12715  | -  | - |  -  |  peltiermodules.com  |
-
+|Peltier element  |  1  | 12v 150w peltier TEC1-12715 | DUAITEK |  TEC1-12715  | -  | - |  -  |  peltiermodules.com  |
+|  XTAL1 16 mhz  |  1  |  16 MHz crystal atmel328p |  ECS inc  |  ECS-160-20-4X  |  -  |  -  |---|---|---|---|---|---|---|---|---|---|---|
 
 <br>
 
