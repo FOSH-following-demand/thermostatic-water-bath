@@ -1,0 +1,37 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=DesignVer0.1
+*Date=16:15:10
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;5V;;68.4058;-10.8142;0;Bottom;Componente3
+2;;;71.7105;-69.4247;0;Bottom;Power plug1
+3;;;51.5111;-14.5291;0;Bottom;Via8
+4;;;35.0519;-9.65234;0;Bottom;Via7
+5;22µF;100 mil [THT, multilayer];29.2608;-23.519;90;Bottom;C1
+6;;;6.4008;-71.7742;0;Bottom;Peltier element
+7;;;27.7367;-15.1387;0;Bottom;Via3
+8;;;72.8471;-34.0363;0;Bottom;Via1
+9;;;31.3208;-53.6682;-90;Bottom;MD03A1
+10;;THT;26.8064;-17.1635;0;Bottom;XTAL1
+11;;THT;63.5508;-22.2442;90;Bottom;lcdScreen
+12;;;49.6823;-15.7483;0;Bottom;Via6
+13;22µF;100 mil [THT, multilayer];24.1808;-23.519;90;Bottom;C2
+14;;;71.6279;-39.5227;0;Bottom;Via4
+15;;;53.3399;-19.4059;0;Bottom;Via5
+16;4.7k;THT;77.5208;-55.2642;180;Bottom;R1
+17;;;6.57572;-7.00853;90;Bottom;DS1
+18;5V;DPak [SMD];77.5209;-35.1841;0;Top;U2
+19;;;16.7639;-28.5499;0;Bottom;Via2
+20;1µF;100 mil [THT, electrolytic];66.0908;-32.4042;0;Bottom;C4
+21;1µF;100 mil [THT, electrolytic];78.7908;-47.6442;0;Bottom;C3
+22;;dip;33.0708;-8.27415;90;Bottom;U1
