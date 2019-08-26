@@ -8,7 +8,7 @@ We recommend creating different files:
 <br>
 
 
-| Reference | Qty  | Description | manufacturer  |MPN |Digikey|Mouser|RS|Newark|Farnell|
+| Reference | Qty  | Description | manufacturer  | MPN | Digikey | Mouser | RS | Newark | Farnell |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |Peltier element  |  1  | 12v 150w peltier TEC1-12715 | DUAITEK |  TEC1-12715  | -  | - |  -  |  peltiermodules.com  |
 |  XTAL1 16 mhz  |  1  |  16 MHz crystal atmel328p |  ECS inc  |  ECS-160-20-4X  |  -  |  -  |---|---|---|---|---|---|---|---|---|---|---|
