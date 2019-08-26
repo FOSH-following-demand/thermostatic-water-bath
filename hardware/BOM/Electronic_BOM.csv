@@ -1,0 +1,13 @@
+References,Qty,Description,Manufacturer,MPN,Manufacturer,MPN,Manufacturer,MPN,Manufacturer,MPN,Manufacturer,MPN,Manufacturer,MPN,Manufacturer,MPN,Digikey,Mouser,RS,Newark,Farnell
+Ceramic Capacitor,2,voltaje 10V; 22µF,AVX,TAJB226K016RNJ,Panasonic,ECA-1HM220,,,,,,,,,,,478-1682-6-ND,581TAJB226K016,4647754,60R5892,197294
+Electrolytic Capacitor,2,voltaje 16V;; capacitancia 1µF,Yageo,CC0402KRX5R5BB105,Murata,GRM155R60J105KE19D,Yageo,CC0603KRX7R8BB105,Murata,GRM188R71E105KA12D,Yageo,CC0805KKX7R8BB105,Murata,GRM21BR71H105KA12L,AVX,TAJA105K035RNJ,490-1320-6-ND,81GRM155R60J105KE19,7235180,68R4627,1845729
+FTDI Basic Programmer,1,Basic LilyPad; voltaje 5V,,,,,,,,,,,,,,,,,,,
+DS18B20 1-Wire Temperature Sensor,1,DS18B20,,,,,,,,,,,,,,,DS18B20Z+-ND,700DS18B20+,5402811P,68AC5074,2909834
+Generic female header - 2 pins,1,"Tamaño del hoyo 1.0mm,0.508mm; row single; paquete THT; Alfileres 2; forma ♀ (female); espacio entre pines 0.1in (2.54mm)",,,,,,,,,,,,,,,,,,,
+Dual VNH2SP30 Motor Driver,1,Número de componente MD03A,,,,,,,,,,,,,,,,,,,
+Peltier Element,1,,,,,,,,,,,,,,,,,,,,
+Power plug,1,,,,,,,,,,,,,,,,,,,,
+4.7kΩ Resistor,1,bands 4; tolerancia ±5%; Resistencia 4.7kΩ; paquete THT; espacio entre pines 400 mil,,,,,,,,,,,,,,,,,,,
+atmega328,1,Tipo ATMEGA328; versión Atmega328-20PU; Variante dip28 THT; paquete dip,,,,,,,,,,,,,,,,,,,
+Voltage Regulator - 5V,1,voltaje 5V; paquete DPak [SMD],,,,,,,,,,,,,,,,,,,
+Crystal,1,Tipo crystal; Frecuencia 16 Mhz; paquete THT; espacio entre pines 5.08mm,,,,,,,,,,,,,,,,,,,
