@@ -1,6 +1,28 @@
+/************************************/
+/*****This code is DEBUG*************/
+/*****This is not a release version**/
+/*****Please don't use it in release*/
+/************************************/
+/*****Juan Blanc***TECSCI 2019*******/
+/************************************/
+/**********Version 0.0.2*************/
+/************************************/
+
+/*  This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 #include "peltier.h"
 
-#include <Wire.h> 
+#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
@@ -24,11 +46,11 @@ float set_temperature = 25.5;
 /* pin to connect the DS18B20 sensor */
 const int pinDataDQ = 9;
 
-/* Object creation of Temperature sensor and lcdScreen */ 
+/* Object creation of Temperature sensor and lcdScreen */
 
 OneWire oneWireObject(pinDataDQ);
 DallasTemperature sensorDS18B20(&oneWireObject);
-LiquidCrystal_I2C lcd(0x27,16,2);  
+LiquidCrystal_I2C lcd(0x27,16,2);
 
 /* This is new */
 peltier peltierA;
@@ -70,7 +92,7 @@ void loop() {
   lcd.print(sensorDS18B20.getTempCByIndex(0),2);
   lcd.setCursor(4,1);
   lcd.print(set_temperature,2);
-  
+
  if (sensorDS18B20.getTempCByIndex(0) < set_temperature){
   peltierA.heat(1,255);
   lcd.setCursor(14,0);
