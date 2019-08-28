@@ -39,8 +39,16 @@ We have managed to stabilize the temperature adequately in the range of + - 0.1 
 
 <a href="Large Test" title="Sample image of the peltier element"><img src="https://raw.githubusercontent.com/FOSH-following-demand/thermostatic-wather-bath/master/largeTest.png"></a>
 
+
+
 ### Contribute
 As we move forward, we will be contributing more and more things to the repository, if you like this project please contribute to it, after reading the [contributing](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/contributing.md) scheme.
+
+
+### Development Plan
+
+To follow the last changes made in the project, please follow this [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/dev_plan.md)
+
 
 ### Construction and Building
 
