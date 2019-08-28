@@ -48,35 +48,36 @@ const int pinDataDQ = 9;
 
 /* Object creation of Temperature sensor and lcdScreen */
 
-OneWire oneWireObject(pinDataDQ);
-DallasTemperature sensorDS18B20(&oneWireObject);
-LiquidCrystal_I2C lcd(0x27,16,2);
+OneWire oneWireObject(pinDataDQ);  //using one wire library and the data pin
+DallasTemperature sensorDS18B20(&oneWireObject); // we connect the library to the sensor
+LiquidCrystal_I2C lcd(0x27,16,2); // Watch out the address of the lcd screen, could be not the same
 
-/* This is new */
+/* The creation of the peltier library*/
 peltier peltierA;
 
 void setup() {
   /* A, B, enable, pwm */
+  /* We create a peltier element */
   peltierA.createPeltier(4,7,6,5);
   /* All the requierd begins and custom character creations */
-  lcd.init();
-    lcd.backlight();
-      lcd.createChar(0, bigP);
-         lcd.createChar(1, bigH);
-          lcd.createChar(2, UsingPID);
-           lcd.createChar(3, steadySign);
-            lcd.createChar(4, microActivity);
-      sensorDS18B20.begin();
-     sensorDS18B20.setResolution(12);
-  Serial.begin(9600);
+  lcd.init(); // Init LCD
+    lcd.backlight(); //Backlight on
+      lcd.createChar(0, bigP); //custom char 1
+         lcd.createChar(1, bigH); // custom char 2
+          lcd.createChar(2, UsingPID); // custom char 3
+           lcd.createChar(3, steadySign); // custom char 4
+            lcd.createChar(4, microActivity); // custom char 5
+
+      sensorDS18B20.begin(); //init sensor DS18B20
+     sensorDS18B20.setResolution(12);  //12 bit resolution by default, it can be reduced but not increased
+  Serial.begin(9600); //default comunication
  /* end begins */
 
  /*First message lcd and string constants */
   lcd.setCursor(9,0);
   lcd.print("TWB 1.3");
   delay(1500);
-  lcd.setCursor(9,0);
-  lcd.print("       ");
+  lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("Act:");
   lcd.setCursor(0,1);
@@ -85,27 +86,28 @@ void setup() {
   lcd.print("R:");
 /* end messages and strings constants */
 }
+/* It only work in a "on-off" configuration */
 
 void loop() {
-   sensorDS18B20.requestTemperatures();
-  lcd.setCursor(4,0);
-  lcd.print(sensorDS18B20.getTempCByIndex(0),2);
-  lcd.setCursor(4,1);
-  lcd.print(set_temperature,2);
+  sensorDS18B20.requestTemperatures(); //request temp from sensor
+  lcd.setCursor(4,0);  //put the cursor of the lcd
+  lcd.print(sensorDS18B20.getTempCByIndex(0),2); //print the temperature with 2 decimal round
+  lcd.setCursor(4,1); //put the cursor of the lcd
+  lcd.print(set_temperature,2); //print the final temperature with 2 decimal round
 
  if (sensorDS18B20.getTempCByIndex(0) < set_temperature){
-  peltierA.heat(1,255);
-  lcd.setCursor(14,0);
-  lcd.write(1);
-  lcd.setCursor(12,1);
-  lcd.print("ht");
+  peltierA.heat(1,255); //heat to the maximum
+  lcd.setCursor(14,0); //put the cursor of the lcd in 14 colum, 1st row
+  lcd.write(1); //write custom character number 1,bigH
+  lcd.setCursor(12,1); //put the cursor of the lcd in 12 colum, 2nd row
+  lcd.print("ht"); //print ht on screen
  }
  else
  {
-  peltierA.powerOff(1);
-  lcd.setCursor(14,0);
-  lcd.write(3);
-  lcd.setCursor(12,1);
-  lcd.print("0 ");
+  peltierA.powerOff(1);  //power off the lcd
+  lcd.setCursor(14,0); //put the cursor of the lcd in 14 colum, 1st row
+  lcd.write(3); //write custom character number 4,steadySign
+  lcd.setCursor(12,1); //put the cursor of the lcd in 12 colum, 2nd row
+  lcd.print("0 ");  //print 0 in pwm
  }
 }
