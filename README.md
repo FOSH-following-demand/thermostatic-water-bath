@@ -11,7 +11,12 @@ Thanks you for visiting this repository of this wonderful project!.
 This document (The README file) is a hub to give you some guidance about all of what is happening here.
 
 If you want to know more, please follow this quick links to jump to a specific section, or just scroll down to find out more!
-
+  * [The problem involved](https://github.com/FOSH-following-demand/thermostatic-water-bath#the-problem)
+  * [The solution we found](https://github.com/FOSH-following-demand/thermostatic-water-bath#the-solution)
+  * [The idea behind the project](https://github.com/FOSH-following-demand/thermostatic-water-bath#the-idea)
+  * [What we found interesting? ](https://github.com/FOSH-following-demand/thermostatic-water-bath#what-we-found)
+  * [Find out more about](https://github.com/FOSH-following-demand/thermostatic-water-bath#get-involved)
+  * [I don't understand something](https://github.com/FOSH-following-demand/thermostatic-water-bath#glossary)
 
 ## The problem:
 
@@ -35,6 +40,7 @@ The project will consist of a control circuit, the design of the same and the co
 ### The idea
 
 The microcontrollers based on the [ATMEGA328p](https://store.arduino.cc/usa/arduino-uno-rev3) will be used mainly for the first tests and the calibration of the sensors.
+
 Once this is done (by the way, you can check the code [here](https://github.com/FOSH-following-demand/thermostatic-wather-bath/tree/master/software/MCU)), the objective will be to use a __"We Mos D1 Mini"__ [board](https://wiki.wemos.cc/products:d1:d1_mini) as the main controller and, as a complement, the ability to connect to [Cayenne web services](https://mydevices.com/) as a monitor and remote control through IoT technology.
 
 The electric resistors if they do not have water are burned (if they do not have electronic protection circuits, as usual), with the design proposed in this project, we will try to avoid it by measuring the current that the cell consumes, so we can determine, without using another type of sensors, like a __DS18B20__ ([datasheet here](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)), if the container where the piece is located, has enough distilled water or refrigerant (in case you want to cool).
