@@ -6,11 +6,22 @@
 ### Welcome!
 <a href="https://tecsci.com.ar/" title="Technology for Science"><img src="https://raw.githubusercontent.com/FOSH-following-demand/thermostatic-wather-bath/master/tecsciLogo.png"></a>
 
+Thanks you for visiting this repository of this wonderful project!.
+
+This document (The README file) is a hub to give you some guidance about all of what is happening here.
+
+If you want to know more, please follow this quick links to jump to a specific section, or just scroll down to find out more!
+
+
+## The problem:
 
 In testing laboratories, it is always useful to keep reagents or tests that are analyzed at certain temperatures.
 A _thermostatic bath_ is a device designed to maintain and stabilize the temperature of the objects that enter it.
 
 In general, they are composed of electric heaters that heat the distilled water and, when they reach a certain temperature, they are automatically disconnected from the energy.
+
+
+## The solution:
 
 Our idea is to use efficiency and solidity as a basis, so we will use Peltier cells to take advantage of the Peltier effect, which is normally used as a thermoelectric coolant.
 
@@ -20,12 +31,18 @@ Therefore, we would have a thermostatic bath capable of generating heat or cold 
 
 The project will consist of a control circuit, the design of the same and the construction of the storage box.
 
+
+### The idea
+
 The microcontrollers based on the [ATMEGA328p](https://store.arduino.cc/usa/arduino-uno-rev3) will be used mainly for the first tests and the calibration of the sensors.
 Once this is done (by the way, you can check the code [here](https://github.com/FOSH-following-demand/thermostatic-wather-bath/tree/master/software/MCU)), the objective will be to use a __"We Mos D1 Mini"__ [board](https://wiki.wemos.cc/products:d1:d1_mini) as the main controller and, as a complement, the ability to connect to [Cayenne web services](https://mydevices.com/) as a monitor and remote control through IoT technology.
 
 The electric resistors if they do not have water are burned (if they do not have electronic protection circuits, as usual), with the design proposed in this project, we will try to avoid it by measuring the current that the cell consumes, so we can determine, without using another type of sensors, like a __DS18B20__ ([datasheet here](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)), if the container where the piece is located, has enough distilled water or refrigerant (in case you want to cool).
 
 There is a lot of variety of Peltier cells, qualities and ways to get it (For example, Amazon, eBay or AliExpress), we have been guided by a Chinese manufacturer ([link here](https://peltiermodules.com/)) that poorly describes the characteristics of the product, but when we go to the tests, it performs correctly based on the datasheet.
+
+
+## What we found
 
 In our studies, we used a Peltier Cell [TEC-12705](https://peltiermodules.com/peltier.datasheet/TEC1-12705.pdf) to start, after many thorough tests, we realized that it would not be able to maintain and heat quickly the water.
 
@@ -39,7 +56,7 @@ We have managed to stabilize the temperature adequately in the range of + - 0.1 
 
 <a href="Large Test" title="Sample image of the peltier element"><img src="https://raw.githubusercontent.com/FOSH-following-demand/thermostatic-wather-bath/master/largeTest.png"></a>
 
-
+## Get involved
 
 ### Contribute
 As we move forward, we will be contributing more and more things to the repository, if you like this project please contribute to it, after reading the [contributing](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/contributing.md) scheme.
@@ -58,5 +75,12 @@ To follow the last changes made in the project, please follow this [link](https:
 
   To continue with the _Building of the Hardware_, please follow this another [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/hardware/BOM/BOM.md)
 
+### Thank you
 
 by [TECSCI](https://github.com/tecsci)
+
+### Glossary
+
+  * __README File__: a document that introduces an open project to the public and any potential contributors
+  * __repository__ or __repo__:a collection of documents related to your project, in which you create and save new code or content
+  * __Issue__: the GitHub term for tasks, enhancements, and bugs for your projects
