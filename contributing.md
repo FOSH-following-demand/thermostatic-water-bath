@@ -17,5 +17,5 @@ It has taken a lot of work, hours of practice with the team, designs, joys, soft
 
 ## These is a list of things you can do in order to contribute to the project:
 
-### User feedback.
-  in order to do a feedback, you can open an issue [here](https://github.com/FOSH-following-demand/thermostatic-water-bath/issues/new)
+  * User feedback:
+      in order to do a feedback, you can open an issue [here](https://github.com/FOSH-following-demand/thermostatic-water-bath/issues/new)
