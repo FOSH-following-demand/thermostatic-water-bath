@@ -29,7 +29,7 @@ bool powerOff(bool confirm);
 ```
 You have two options, one is to use a Driver as we will suggest later, although the other most frequently used is to use a Relay connected to one of the pins (In this case it would be the "Enable" pin you have defined), while that with the other system using a driver, you will not only be able to cool and heat without moving any electrical connection, but you will also have the possibility of using a PID control in your setup for temperature control.
 
-- LCD Screen Library
+- LCD Screen Library  (It is currently under development :fire: ...)
 ```
   initThis(char addr, int rows);
 
