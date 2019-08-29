@@ -32,7 +32,9 @@ Two peltier devices are used for increasing cooling effect.
 Heat transfer effectiveness through peltier device is increased by using heat pipe based heat sink attached with fan and liquid based heat sink.
 The hot side of both the peltier device is attached to same liquid based heat sink and cold side is attached to heat pipe based heat sink.
 The coolant (water) inside the liquid based heat sink absorbs the heat from the hot side of both the peltier devices and then circulated through radiator.
-The fins inside the radiator absorb heat from the liquid and give it back at lower temperature to the container. Again the cold liquid from container pumped into the liquid based heat sink and same cycle repeats. The heat pipe based heat sink dissipates cold air inside the cabinet through fins.
+The fins inside the radiator absorb heat from the liquid and give it back at lower temperature to the container.
+Again the cold liquid from container pumped into the liquid based heat sink and same cycle repeats.
+The heat pipe based heat sink dissipates cold air inside the cabinet through fins.
 Heat pipe and liquid based cooling is the most efficient method of heat removal, they are often 4 -5 times more efficient compared to a normal aluminium heat sink.
 A controller circuit is designed and implemented for controlling the set temperature inside the cabinet.
 Based on the temperature data sensed by the LM-35 sensor, the controller controls the power supply to the peltier device.
@@ -48,7 +50,11 @@ the first implementation of the code began, following a trial and error path, a 
 Also, in the research of the papers, there was some new paper about peltier elements in Driving high brightness LED applied in specral measurements, also find in the [IEEE xplore ](https://ieeexplore.ieee.org/document/7428639)
 ```
 Abstract:
-A double closed-loop control system for driving high brightness LED to keep the temperature and emission intensity of LED stable is presented. In one closed-loop control, a Peltier is used to control LED's temperature and its average power can be dynamically regulated as LED temperature changes. In another, sampling real emission intensity of LED and comparing with expected intensity is repeatedly operated to make the real intensity follow the expected intensity. Design of LED driving system is demonstrated, and the thermostatic control effect and stability of LED spectrum are tested. The test results show that the error of LED temperature control is about 0.1°C corresponding to a center wavelength shift of 0.015 nm for a red LED and the emission intensity error for the same LED is within 0.1%.
+A double closed-loop control system for driving high brightness LED to keep the temperature and emission intensity of LED stable is presented.
+In one closed-loop control, a Peltier is used to control LED's temperature and its average power can be dynamically regulated as LED temperature changes.
+In another, sampling real emission intensity of LED and comparing with expected intensity is repeatedly operated to make the real intensity follow the expected intensity.
+Design of LED driving system is demonstrated, and the thermostatic control effect and stability of LED spectrum are tested.
+The test results show that the error of LED temperature control is about 0.1°C corresponding to a center wavelength shift of 0.015 nm for a red LED and the emission intensity error for the same LED is within 0.1%.
 ```
 
 
