@@ -3,7 +3,8 @@
 These projects are linked to the research than was made for it, as showned in [Research and first tests](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/dev_plan.md#week-1-research-and-first-tests)
 
 In the meantime, there are a lot of tools made, but none of them are Open Source at all, so this push forward the investigation about this construction.
-Here are the results currently found [29/08/19]
+
+## Here are the results currently found [29/08/19]
 
 | Project name  | URL           | Active/Not active | Notes - relevance |
 | ------------- | ------------- | ----------------- | -------------- |
