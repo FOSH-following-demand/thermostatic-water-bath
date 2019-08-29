@@ -81,6 +81,8 @@ To follow the last changes made in the project, please follow this [link](https:
 
   To continue with the _Building of the Hardware_, please follow this another [link](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/hardware/BOM/BOM.md)
 
+  To continue with the _Building of the frame_, please click [here](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/hardware/frame/frame.md#3d-design-files-are-here)
+
 ### Thank you
 
 by [TECSCI](https://github.com/tecsci)
