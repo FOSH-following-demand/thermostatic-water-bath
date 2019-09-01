@@ -20,8 +20,8 @@ If you want to know more, please follow this quick links to jump to a specific s
 
 ## The problem:
 
-In testing laboratories, it is always useful to keep reagents or tests that are analyzed at certain temperatures.
-A _thermostatic bath_ is a device designed to maintain and stabilize the temperature of the objects that enter it.
+In research and clinical laboratories, it is always useful to keep reagents or samples that are analyzed, at certain temperatures.
+A _thermostatic bath_ is a device designed to maintain the temperature of the objects in contact with the fluid used.
 
 In general, they are composed of electric heaters that heat the distilled water and, when they reach a certain temperature, they are automatically disconnected from the energy.
 
