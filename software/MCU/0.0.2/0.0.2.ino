@@ -21,7 +21,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#include <Wire.h> 
+#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
@@ -38,7 +38,7 @@ byte microActivity[] = {0x0C,0x10,0x10,0x0C,0x02,0x05,0x07,0x05};
 int peltierA = 4 ;  //Digital
 int peltierB = 7 ;  //Digital
 int enablePeltier = 6 ; //Digital
-int pwmPeltier = 5 ;    //Used to control the driver 
+int pwmPeltier = 5 ;    //Used to control the driver
 
 //Variables
 float temperature_read = 0.0;
@@ -47,28 +47,28 @@ float temperature_read = 0.0;
 float set_temperature = 55.5;
 //END IMPORTANT
 
-/* For PID Control */ 
+/* For PID Control */
 float PID_error = 0;
 float previous_error = 0;
 float elapsedTime, Time, timePrev;
 int PID_value = 0;
 int currentPin = 0 ;
 
-// This is for testing 
+// This is for testing
 float porcentage = (set_temperature*96.989)/100; //to 98% of power
 
-//PID constants
-int kp = 415 ;   int ki = 0;   int kd = 140;
-int PID_p = 0;    int PID_i = 0;    int PID_d = 0;
+//PD constants
+int kp = 430 ;  int kd = 100;
+int PID_p = 0;   int PID_d = 0;
 
 /* pin to connect the DS18B20 sensor */
 const int pinDataDQ = 9;
 
-/* Object creation of Temperature sensor and lcdScreen */ 
+/* Object creation of Temperature sensor and lcdScreen */
 
 OneWire oneWireObject(pinDataDQ);
 DallasTemperature sensorDS18B20(&oneWireObject);
-LiquidCrystal_I2C lcd(0x27,16,2);  
+LiquidCrystal_I2C lcd(0x27,16,2);
 
 /* Setup */
 void setup() {
@@ -87,7 +87,7 @@ void setup() {
 
  /*First message lcd and string constants */
   lcd.setCursor(9,0);
-  lcd.print("TWB 1.0");
+  lcd.print("TWB 1.2");
   delay(1500);
   lcd.setCursor(9,0);
   lcd.print("       ");
@@ -124,7 +124,7 @@ void loop() {
   lcd.print(sensorDS18B20.getTempCByIndex(0),2);
   lcd.setCursor(4,1);
   lcd.print(set_temperature,2);
-  
+
   delay(1000);
 
 /* This part is designed to reach the maximum speed, while approching to the end */
@@ -141,34 +141,27 @@ void loop() {
 }
   else    //please use P-D Control
   {
+  /* now we request the temperatures to the DS18B20 */
   sensorDS18B20.requestTemperatures();
   temperature_read = sensorDS18B20.getTempCByIndex(0);
-  //Next we calculate the error between the setpoint and the real value
+  /*Next we calculate the error between the setpoint and the real value*/
   PID_error = set_temperature - temperature_read;
-  //Calculate the P value
+  /*Calculate the P value*/
   PID_p = kp * PID_error;
-  
-  /*  We don't use the integrer part, so it's disabled
-  
-  if(-3 < PID_error <3) //Calculate the I value in a range on +-3, 
-  {
-    PID_i = PID_i + (ki * PID_error);
-  }
-*/
 
-  /*For derivative we need real time to calculate speed change rate*/ 
+  /*For derivative we need real time to calculate speed change rate*/
   timePrev = Time;                            // the previous time is stored before the actual time read
   Time = millis();                            // actual time read
-  elapsedTime = (Time - timePrev) / 1000; 
+  elapsedTime = (Time - timePrev) / 1000;
   /*Now we can calculate the D calue */
   PID_d = kd*((PID_error - previous_error)/elapsedTime);
   /*Final total PID value is the sum of P + I + D */
-  PID_value = PID_p + PID_i + PID_d; //PID_i is zero
+  PID_value = PID_p + PID_d; //PID_i is zero
 
   //We define PWM range between 0 and 255
   if(PID_value < 0)
   {    PID_value = 0;    }
-  if(PID_value > 255)  
+  if(PID_value > 255)
   {    PID_value = 255;  }
   //Now we can write the PWM signal to the driver
 
@@ -179,19 +172,19 @@ void loop() {
   lcd.print(sensorDS18B20.getTempCByIndex(0),2);
   lcd.setCursor(4,1);
   lcd.print(set_temperature,1);
-   if (PID_value < 100){
+   if (100> PID_value){
     lcd.setCursor(15,1);
-    lcd.print(" ");}
- 
+    lcd.print(" ");
+    }
+
    lcd.setCursor(12,1);
   lcd.print(PID_value);
-  
+
  if (sensorDS18B20.getTempCByIndex(0) < set_temperature){
-  
+
   heatPlease(1,PID_value);  /*Now jump to the function */
   lcd.setCursor(14,0);
   lcd.write(1);
-  
  }
 if (sensorDS18B20.getTempCByIndex(0) == (set_temperature) && sensorDS18B20.getTempCByIndex(0) <= (set_temperature + 0.15) )
 {
@@ -200,15 +193,18 @@ if (sensorDS18B20.getTempCByIndex(0) == (set_temperature) && sensorDS18B20.getTe
   heatPlease(1,PID_value); //to maintain the temperature
 }
   }  /* end of P-D Control */
-  
-/* Comp. Activity blink */  
+
+/* Comp. Activity blink */
 lcd.setCursor(15,1);
 lcd.write(4);
 
 /* Monitoring */
 Serial.println(sensorDS18B20.getTempCByIndex(0),4);
 delay(350);
-
+   if (100> PID_value){
+    lcd.setCursor(14,1);
+    lcd.print(" ");
+    }
 }
 
 void heatPlease(bool enable, int pwmSet)
@@ -217,7 +213,7 @@ void heatPlease(bool enable, int pwmSet)
   digitalWrite(peltierA,HIGH);
   digitalWrite(peltierB,LOW);
  /* both values are accepted , as much as a 1 or a true */
-  if (enable == 1 || enable == true && 0>pwmSet<=255) 
+  if (enable == 1 || enable == true && 0>pwmSet<=255)
   {
     digitalWrite(enablePeltier,HIGH);
     analogWrite(pwmPeltier,pwmSet);
@@ -226,7 +222,7 @@ void heatPlease(bool enable, int pwmSet)
   {
     digitalWrite(enablePeltier,LOW);
   }
-  
+
 }
 
 void coolPlease(bool enable,int pwmSet)
@@ -242,7 +238,7 @@ void coolPlease(bool enable,int pwmSet)
   }
   else
   {
-    
+
     digitalWrite(enablePeltier,LOW);
   }
 }
