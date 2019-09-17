@@ -26,7 +26,7 @@
 ### Program 0.0.4
   Last program to use the Arduino UNO Architecture, (microcontroller ATMEGA328-P)
   * This is the first program that can use the basic PID control, not only PD
-  * kp, ki, and kd were set in two different ways, one in _aggresive mode_ and the other in _conservative mode_ ([What is this?](link))
+  * kp, ki, and kd were set in two different ways, one in _aggresive mode_ and the other in _conservative mode_ ([What is this?](https://github.com/FOSH-following-demand/thermostatic-water-bath/blob/master/documentation/using/PID_Tunning%20Guide_Rice.pdf))
   * new routines for interrupts, they are used to change the setpoint, every turn makes +.1 °C in clockwise rotation and -.1°C in counterclockwise. [how to connect?](link)
   * The peltier library is located [here](https://github.com/br3ttb/Arduino-PID-Library/), [how to use it?](https://playground.arduino.cc/Code/PIDLibrary/)
 
