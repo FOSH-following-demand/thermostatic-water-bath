@@ -39,8 +39,10 @@ The project will consist on the design and construction of the control circuit a
 ### The idea
 
 The microcontrollers based on the [ATMEGA328p](https://store.arduino.cc/usa/arduino-uno-rev3) will be used mainly for the first tests and the calibration of the sensors.
-
+```
 Once this is done (by the way, you can check the code [here](https://github.com/FOSH-following-demand/thermostatic-wather-bath/tree/master/software/MCU)), the goal will be to use a __"We Mos D1 Mini"__ [board](https://wiki.wemos.cc/products:d1:d1_mini) as the main controller and, as a complement, the ability to connect to [Cayenne web services](https://mydevices.com/) as a monitor and remote control through IoT technology.
+```
+While this was a good idea, in the end, we are going to use a "_NODEMCU-32S_", The [NodeMCU ESP-32S](https://docs.zerynth.com/latest/official/board.zerynth.nodemcu_esp32/docs/index.html) is one of the development board created by NodeMcu to evaluate the ESP-WROOM-32 module. It is based on the ESP32 microcontroller that boasts Wifi, Bluetooth, Ethernet and Low Power support all in a single chip. Then, an internet connection will be built through the use of the [Mozilla WebThings Open Source IoT](https://iot.mozilla.org/) platform, which will be centralized in a hub ([Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)) for later operation and remote control.
 
 The electric resistors if they do not have water are burned (if they do not have electronic protection circuits, as usual), with the design proposed in this project, we will try to avoid it by measuring the current that the cell consumes, so we can determine, without using another type of sensors, like a __DS18B20__ ([datasheet here](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)), if the container where the piece is located, has enough distilled water or coolant (in case you want to cool below 0 deg C).
 
