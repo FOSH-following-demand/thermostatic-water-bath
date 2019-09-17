@@ -6,7 +6,7 @@
 /************************************/
 /*****Juan Blanc***TECSCI 2019*******/
 /************************************/
-/**********Version 0.0.2*************/
+/**********Version 0.0.4*************/
 /************************************/
 
 /*  This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,7 @@
 #include <Adafruit_BME280.h>
 #include <PID_v1.h>
 #include "peltier.h"
-#include <Wire.h> 
+#include <Wire.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include <LiquidCrystal_I2C.h>
@@ -37,7 +37,7 @@
 /* pin to connect the DS18B20 sensor */
 const int pinDataDQ = 9;
 
-/* Object creation of Temperature sensor and lcdScreen */ 
+/* Object creation of Temperature sensor and lcdScreen */
 peltier peltier1;
 Adafruit_BME280 bme;
 
@@ -67,7 +67,7 @@ double consKp=8, consKi=.50, consKd=8;
 OneWire oneWireObject(pinDataDQ);
 DallasTemperature sensorDS18B20(&oneWireObject);
 PID myPID(&Input, &Output, &Setpoint, consKp, consKi, consKd, DIRECT);
-LiquidCrystal_I2C lcd(0x27,16,2);  
+LiquidCrystal_I2C lcd(0x27,16,2);
 
 /* EXPERIMENTAL  */
 int pinA = 2; // Interrupt Hardware Pin Digital 2
@@ -75,10 +75,10 @@ int pinB = 3; // Interrupt Hardware Pin Digital 3
 volatile byte aFlag = 0; // let's us know when we're expecting a rising edge on pinA to signal that the encoder has arrived at a detent
 volatile byte bFlag = 0; // let's us know when we're expecting a rising edge on pinB to signal that the encoder has arrived at a detent (opposite direction to when aFlag is set)
 volatile byte reading = 0; //somewhere to store the direct values we read from our interrupt pins before checking to see if we have moved a whole detent
- 
+
 void setup()
 {
-  
+
 peltier1.createPeltier(peltierA,peltierB,enablePeltier,pwmPeltier);
 
   //initialize the variables we're linked to
@@ -98,7 +98,7 @@ peltier1.createPeltier(peltierA,peltierB,enablePeltier,pwmPeltier);
       lcd.setCursor(0,1);
       lcd.print("B1- No Amb sensor");
       Serial.println("NoAmbientSensor");
-      Setpoint = 25 ; 
+      Setpoint = 25 ;
       delay(1000);
       lcd.clear();
       delay(1000);
@@ -106,7 +106,7 @@ peltier1.createPeltier(peltierA,peltierB,enablePeltier,pwmPeltier);
 
     /* if is ok the sensor, we define the setpoint as the ambient temperature */
     Setpoint = bme.readTemperature();
-  
+
 
    /*First message lcd and string constants */
   lcd.setCursor(0,0);
@@ -135,7 +135,7 @@ peltier1.createPeltier(peltierA,peltierB,enablePeltier,pwmPeltier);
  /* end begins */
   Input = sensorDS18B20.getTempCByIndex(0);
 
-  
+
 /* Safe test, is the sensor plugged in? */
 sensorDS18B20.requestTemperatures();
 if (sensorDS18B20.getTempCByIndex(0) < (-4))
@@ -161,7 +161,7 @@ if (sensorDS18B20.getTempCByIndex(0) < (-4))
    //Configuracion del pin switch del Encoder Rotativo
   pinMode (buttonPin, INPUT_PULLUP);
   //Configuracion de pines y rutinas de interrupcion para Encoder Rotativo
-  pinMode(pinA, INPUT_PULLUP); 
+  pinMode(pinA, INPUT_PULLUP);
   pinMode(pinB, INPUT_PULLUP);
   attachInterrupt(0,PinA,RISING); // Set Interrupt pin A
   attachInterrupt(1,PinB,RISING); // Set interrupt pin B
@@ -169,16 +169,16 @@ if (sensorDS18B20.getTempCByIndex(0) < (-4))
 }
 
 void loop()
-{ 
+{
   sensorDS18B20.requestTemperatures();
   lcd.setCursor(4,0);
   lcd.print(sensorDS18B20.getTempCByIndex(0),2);
   lcd.setCursor(4,1);
   lcd.print(Setpoint);
   Input = sensorDS18B20.getTempCByIndex(0);
-  
+
   double gap = abs(Setpoint-Input); //distance away from setpoint
-  
+
   if (gap < 10)
   {  //we're close to setpoint, use CONSERVATIVE tuning parameters
     myPID.SetTunings(consKp, consKi, consKd);
@@ -192,9 +192,9 @@ void loop()
       lcd.setCursor(14,0);
       lcd.write(2);
   }
-  
+
   myPID.Compute();
-  
+
   if(Output<30){
   lcd.setCursor(12,1);
   lcd.print(Output);
@@ -207,20 +207,20 @@ void loop()
      lcd.setCursor(14,0);
       lcd.write(" ");
   }
-  
+
   if(Output = 0 || Output < 2)
   {
   lcd.setCursor(15,0);
   lcd.write(3);  //Stedy sign
   }
-  
+
 /* Monitoring */
 Serial.println(sensorDS18B20.getTempCByIndex(0),4);
 
 /* Comp. Activity blink */
 lcd.setCursor(15,1);
 lcd.write(4);
-  
+
 }
 
 /* Interruption routines for the rotary encoder */
