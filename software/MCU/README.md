@@ -28,6 +28,7 @@
   * This is the first program that can use the basic PID control, not only PD
   * kp, ki, and kd were set in two different ways, one in _aggresive mode_ and the other in _conservative mode_ ([What is this?](link))
   * new routines for interrupts, they are used to change the setpoint, every turn makes +.1 °C in clockwise rotation and -.1°C in counterclockwise. [how to connect?](link)
+  You'll need to install __Adafruit_BME280__ and __Adafruit_Sensor__ in order to try this sketch, refer to [0.0.5](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/software/MCU#program-005) to learn how to.
 
 ### Program 0.0.5
   __NEW Architecture__: Now we're using the _NODEMCU-32S_ for the project, the peltier library was converted (But is in testing) to use
@@ -35,6 +36,10 @@
   * It uses the PID Control used in [0.0.4](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/software/MCU#program-004), with the kp,ki and kd tunned for the main construction.
   * There was added a BMP280 sensor to check the ambient temperature, so we can calculate the maximum and minimum temperature of the equipment, [How to connect ?](link)
   * The interrupts routines were eliminated, because in the new architecture this is not mandatory.
+
+  You'll need to install __Adafruit_BME280__ and __Adafruit_Sensor__ in order to try this sketch.
+  * [how to install Adafruit_Sensor in Arduino IDE?](https://learn.adafruit.com/using-the-adafruit-unified-sensor-driver/introduction)
+  * [How to install Adafruit_BME280 in Arduino IDE?](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/arduino-test#install-adafruit-bme280-library-4-7)
 
 # How to work with this programs?
 
