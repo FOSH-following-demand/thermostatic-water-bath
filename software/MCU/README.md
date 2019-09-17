@@ -38,7 +38,7 @@
   * The interrupts routines were eliminated, because in the new architecture this is not mandatory.
 
   You'll need to install __Adafruit_BME280__ and __Adafruit_Sensor__ in order to try this sketch.
-  * [how to install Adafruit_Sensor in Arduino IDE?](https://learn.adafruit.com/using-the-adafruit-unified-sensor-driver/introduction)
+  * [How to install Adafruit_Sensor in Arduino IDE?](https://www.arduinolibraries.info/libraries/adafruit-unified-sensor)
   * [How to install Adafruit_BME280 in Arduino IDE?](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/arduino-test#install-adafruit-bme280-library-4-7)
 
 # How to work with this programs?
