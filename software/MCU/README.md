@@ -44,6 +44,15 @@
   * [How to install Adafruit_Sensor in Arduino IDE?](https://www.arduinolibraries.info/libraries/adafruit-unified-sensor)
   * [How to install Adafruit_BME280 in Arduino IDE?](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/arduino-test#install-adafruit-bme280-library-4-7)
 
+### Program 0.0.5
+
+  * __Using the _NODEMCU-32s__: First version to include Tasks and multi-core processing of them.
+  * It uses the PID Control used in [0.0.5](https://github.com/FOSH-following-demand/thermostatic-water-bath/tree/master/software/MCU#program-005), with the kp,ki and kd tunned for the main construction.
+  * The Peltier library was a bit modified to work with the new architecture
+  * This program __IS NOT STABLE__ because has a lot of _crude code_, the tests aren't done yet for this program.
+  * WIP : The interrupt routines and the connection between the tasks using global variables.
+
+
 # How to work with this programs?
 
 To test this sketch's, you must install the library included in the arduino database.
