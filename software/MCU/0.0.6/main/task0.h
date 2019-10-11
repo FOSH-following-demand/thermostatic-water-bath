@@ -1,13 +1,13 @@
 
 
 
-void controlTask( void * parameters ){
+void controlTask( void * parameter ){
   Serial.println("Starting PID...");
 
 //Define Variables we'll be connecting to
 double Input, Output;
 float temperature_read = 0;
-double Setpoint;
+double Setpoint = 0;
 //Pins
 int peltierA = 32 ;  //Digital GPIO
 int peltierB = 33 ;  //Digital GPIO
@@ -29,7 +29,7 @@ double consKp=.3, consKi=.15, consKd=.4;
 Setpoint = 32;
 
   for(;;){
-      
+    Input = 0 ;   
     double gap = abs(Setpoint-Input); //distance away from setpoint
 
   if (gap < 10)
@@ -59,8 +59,9 @@ Setpoint = 32;
 /* Monitoring */
 //Serial.println(sensorDS18B20.getTempCByIndex(0),4);
 
-vTaskDelay(10);  // one tick delay (15ms) in between reads for stability
-
-
-  }}
+delay(150);
+Serial.println("Calculate PID good");
+  }
+   vTaskDelay(10);
+  }
 /* END -- > Task "Control" used to set the pwm in order to heat */
