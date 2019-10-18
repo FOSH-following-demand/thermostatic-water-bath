@@ -6,7 +6,7 @@
 /************************************/
 /*****Juan Blanc***TECSCI 2019*******/
 /************************************/
-/**********Version 0.0.6.1*************/
+/**********Version 0.0.6*************/
 /************************************/
 
 /*  This program is free software: you can redistribute it and/or modify
@@ -45,6 +45,7 @@ struct chamber_data {
   double temp_act;
   String message ;
   int pwm;
+  bool heatOrCool ;
 } chamber;
 
 /* queue to store all the global data */
@@ -54,19 +55,15 @@ QueueHandle_t queue;
 void setup()
 {
   Serial.begin(115200);
-  /* Queue declaration */
+  /* Queue declaration for use in tasks*/
 
   queue = xQueueCreate(1, sizeof(struct chamber_data)) ;
 
-  // Input = sensorDS18B20.getTempCByIndex(0);
-  // Setpoint = temperature_read;
-  /* TESTING
-      To pass the Data struct to the function, we'll use pointer casted as void
-  */
+
   /*                    functionName,HumanAliasName,stack_size,parameters,priority,handler,coreAttachto */
   xTaskCreatePinnedToCore(controlTask, "PID__Control", 1535, NULL, 1, &Task0, 1);
   xTaskCreatePinnedToCore(lcdTask, "LCD_____task", 1500, NULL, 1, &Task1, 0);
-  xTaskCreatePinnedToCore(serverTask, "Server", 111000, NULL, 1, &Task2, 1);
+  xTaskCreatePinnedToCore(serverTask, "Server", 1000, NULL, 1, &Task2, 1);
   xTaskCreatePinnedToCore(alarmTask, "Alarm_Task", 900, NULL, 1, &Task3, 0);
   xTaskCreatePinnedToCore(temperatureTask, "Temp_Task", 1535, NULL, 1, &Task4, 1);
 
@@ -177,12 +174,19 @@ void temperatureTask(void *parameter) {
     sensorDS18B20.requestTemperatures();
     temp_actual = sensorDS18B20.getTempCByIndex(0);
     //TEMP_ACT.put(0,temp_actual);
+    if (xQueueReceive(queue, &chamber_load_temp, ( TickType_t ) 1 ) != pdPASS)
+  {
     if (temp_actual > 0) {
       Serial.println(temp_actual);
       chamber_load_temp.temp_act = temp_actual ;
       xQueueSend(queue, &chamber_load_temp, portMAX_DELAY);
     }
-    else Serial.print("No hay datos\n");
+    else {
+      Serial.print("No hay datos\n");
+        chamber_load_temp.temp_act = 0 ;
+      xQueueSend(queue, &chamber_load_temp, ( TickType_t ) 1  != pdPASS);
+
+    }}
     vTaskDelay(1000);
     Serial.println("Reading Temp");
   }
@@ -194,7 +198,7 @@ void temperatureTask(void *parameter) {
 String SendHTML(double maintemp, float setpoint) {
   String ptr = "<!DOCTYPE html> <html>\n";
   ptr += "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
-  ptr += "<meta http-equiv=\"refresh\" content=\"3\" >\n";
+  ptr += "<meta http-equiv=\"refresh\" content=\"10\" >\n";
   /* Added by juanstdio */
   ptr += "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\" crossorigin=\"anonymous\">\n";
   /* end added */
@@ -218,8 +222,8 @@ String SendHTML(double maintemp, float setpoint) {
   ptr += (float)setpoint;
   ptr += " C </p>";
   ptr += "<form action=\"/setSetpoint\">\n";
-  ptr += "<input type=\"text\" name=\"value\" value=\"5\"><br> ";
-  ptr += "<input type=\"submit\" value=\"Set Setpoint\">";
+  ptr += "<input type=\"text\" name=\"theSetpoint\" value=\"\"><br> ";
+  ptr += "<input type=\"submit\" value=\"SET Setpoint\">";
   ptr += "</form>\n";
   ptr += "</div>\n";
   ptr += "</body>\n";
@@ -230,23 +234,119 @@ String SendHTML(double maintemp, float setpoint) {
 
 
 void handle_setPoint() {
-  struct chamber_data chamber_load_setpoint ;
-  String setFromWeb = Servidor.arg("value");
-  chamber_load_setpoint.setPoint = setFromWeb.toDouble();
-  xQueueSend(queue, &chamber_load_setpoint, portMAX_DELAY);
+  struct chamber_data chamber_web ;
+  String setFromWeb = Servidor.arg(0);
+
+  chamber.setPoint = setFromWeb.toDouble();
+
+  chamber.setPoint = chamber_web.setPoint ;
+    Serial.println("Showdata");
+    Serial.println(chamber.setPoint);
+    Serial.println(chamber.temp_act);
+ if( xQueueSend(queue, &chamber_web, portMAX_DELAY)) Serial.println("Fail to send setpoint");
+
   String s = "<a href='/'> Click here to return </a>";
   Servidor.send(200, "text/html", s);
+  }
 
-}
+
 void rootPage() {
   struct chamber_data chamber_web ;
   if (xQueueReceive(queue, &chamber_web, portMAX_DELAY))
   {
-    Servidor.send(200, "text/html", SendHTML(chamber_web.temp_act, chamber_web.setPoint));
+    chamber.temp_act  = chamber_web.temp_act ;
+    chamber.setPoint = chamber_web.setPoint ;
+    Serial.println(chamber.setPoint);
+    Serial.println(chamber.temp_act);
+    Servidor.send(200, "text/html", SendHTML(chamber.temp_act, chamber.setPoint));
     Serial.println("Data send to web");
+
+
    }
 }
 
 void handle_NotFound() {
   Servidor.send(404, "text/plain", "Not found");
 }
+
+
+/* Server TASK  to handle the data*/
+
+
+void serverTask(void *parameter){
+     for(;;){
+      yield();
+  }
+  vTaskDelay(10);  // one tick delay (15ms) in between reads for stability
+}
+
+
+void controlTask( void * parameter ){
+  Serial.println("Starting PID...");
+  struct chamber_data chamber_PID ;
+
+//Define Variables we'll be connecting to
+double Input, Output;
+float temperature_read = 0;
+double Setpoint = 0;
+//Pins
+int peltierA = 32 ;  //Digital GPIO
+int peltierB = 33 ;  //Digital GPIO
+int enablePeltier = 25 ; //Digital GPIO
+int pwmPeltier = 26 ;    //Used to control the driver GPIO
+
+//Define the aggressive and conservative Tuning Parameters
+double aggKp=4, aggKi=.225, aggKd=8;
+double consKp=.3, consKi=.15, consKd=.4;
+
+  PID myPID(&Input, &Output, &Setpoint, consKp, consKi, consKd, DIRECT);
+
+  peltier thePeltier ;
+
+  thePeltier.createPeltier(peltierA,peltierB,enablePeltier,pwmPeltier);
+
+/*turn the PID on*/
+  myPID.SetMode(AUTOMATIC);
+Setpoint = 32;
+
+  for(;;){
+
+    if(xQueueReceive(queue, &chamber_PID , portMAX_DELAY)) Serial.println("PID Not recive data");
+
+    chamber_PID.temp_act = Input ;
+    chamber_PID.setPoint = Setpoint ;
+    double gap = abs(Setpoint-Input); //distance away from setpoint
+
+  if (gap < 10)
+  {  //we're close to setpoint, use CONSERVATIVE tuning parameters
+    myPID.SetTunings(consKp, consKi, consKd);
+  }
+  else
+  {
+     //we're far from setpoint, use AGGRESIVE tuning parameters
+     myPID.SetTunings(aggKp, aggKi, aggKd);
+   }
+
+  myPID.Compute();
+  if(Output<30){
+//   lcd.setCursor(12,1);
+ ////  lcd.print(Output);
+ //  lcd.setCursor(15,0);
+ //  lcd.print(" ");
+   thePeltier.heat(1, Output);
+  }
+  else
+  {
+ //    lcd.setCursor(14,0);
+
+ //     lcd.print("nada");
+  }
+/* Monitoring */
+//Serial.println(sensorDS18B20.getTempCByIndex(0),4);
+
+delay(150);
+Serial.println("Calculate PID good");
+  }
+   vTaskDelay(10);
+  }
+/* END -- > Task "Control" used to set the pwm in order to heat */

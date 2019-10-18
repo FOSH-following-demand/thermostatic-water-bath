@@ -14,9 +14,3 @@ float Temperature = 0 ;
 float Humidity = 31;
 
   
-void serverTask(void *parameter){
-     for(;;){
-      yield();
-  }
-  vTaskDelay(10);  // one tick delay (15ms) in between reads for stability
-}
