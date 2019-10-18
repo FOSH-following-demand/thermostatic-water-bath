@@ -2,7 +2,7 @@
 
 <a href="First Version" title="First Version"><img src="https://img.shields.io/badge/first%20version-0.0.1-brightgreen"></a>
 
-<a href="Actual Version" title="Actual Version"><img src="https://img.shields.io/badge/Actual%20Version-0.0.2-green"></a>
+<a href="Actual Version" title="Actual Version"><img src="https://img.shields.io/badge/Version-0.0.8-red"></a>
 
 
 ### Program 0.0.1 (Alpha)
