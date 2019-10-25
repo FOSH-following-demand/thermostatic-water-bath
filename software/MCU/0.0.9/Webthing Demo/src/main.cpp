@@ -1,5 +1,4 @@
 #include <Arduino.h>
-
 #include "peltier.h"
 #include <stdio.h>
 #include <PID_v1.h>
@@ -26,8 +25,8 @@ const char *sensorTypes[] = {"MultiLevelSensor", "Sensor", nullptr};
 ThingDevice weather("ds18b20", "Chamber Temperature", sensorTypes);
 ThingProperty weatherTemp("temperature", "The temperature measured by the sensor", NUMBER, "LevelProperty");
 
-const char *ssid = "FUNINTEC-CTZ";
-const char *password = "UnsamFun2019";
+const char *ssid = "YourWiFiData";
+const char *password = "yourPassword";
 
 struct chamber_data {
   double setPoint;

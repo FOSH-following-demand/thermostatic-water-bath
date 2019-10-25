@@ -4,6 +4,7 @@
 
 <a href="Actual Version" title="Actual Version"><img src="https://img.shields.io/badge/Version-0.0.8-red"></a>
 
+<a href="Beta Version" title="Beta Version"><img src="https://img.shields.io/badge/Beta-0.0.9-green"></a>
 
 ### Program 0.0.1 (Alpha)
   First version of the software
@@ -51,6 +52,7 @@
   * The Peltier library was a bit modified to work with the new architecture
   * This program __IS NOT STABLE__ because has a lot of _crude code_, the tests aren't done yet for this program.
   * WIP : The interrupt routines and the connection between the tasks using global variables.
+  * the BMP280 was eliminated, the funcion was very expendable.
 
 ### Program 0.0.6 (Sarge)
 * __Using the _NODEMCU-32s__: Second version: Tasks and multi-core processing.
@@ -60,7 +62,7 @@
 
 ### Program 0.0.7 (Mike)
 * __Using the _NODEMCU-32s__: Third version: Tasks and multi-core processing.
-* Hard-coded HTML code to show data in the browser. (Requieres internet connection for showing symbols)
+* Hard-coded HTML code to show data in the browser. (Requieres internet connection for showing some symbols)
 * Added landed (crude) web page to set the _setpoint_
 * Problem solved with the Global variables and the share between tasks: Only one archive _(.ino)__ for all and _no queues_
 
@@ -70,9 +72,12 @@
 * This code is marked as STABLE but with no release.
 
 ### Program 0.0.9 (Slinky)
-* __Using the _NODEMCU-32s, ATOM and PlatformIO Framework__
-* Source code not available because is missing some values in data fetch.
-* Changed name to _webthingMain.ino_
+* __Using the _NODEMCU-32s and PlatformIO Framework__ --> [how to install PlatformIO?](https://platformio.org/install/ide?install=atom)
+* _We need ATOM enviorment_ --> [how to install the last version of Atom?](https://atom.io/)
+* In the source code located in /src/main.cpp you have to mannualy __set the SSID and the password of your WiFi Network__
+* This program __only reads the temperature of the ds18b20 sensor and then send it to the WebThings Server__  --> [How to build one on a Raspberry Pi 3?](https://iot.mozilla.org/docs/gateway-getting-started-guide.html)
+* Project name _webthing demo_, no screen, no PID Control, no setpoint.
+* __Very important!__: specific version of libraries are required to compile and run in the , _webthing-arduino 0.0.9_ , _PageBuilder 1.3.4_ and _arduinoJson 5.13.4_. the last one took a lot to catch...
 
 
 
