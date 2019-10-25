@@ -11,12 +11,14 @@
   * it uses the most crude code as possible
   * all the sensors and current measuring
   * the kp, ki and kd was not set in the code.
+  * Baud-rate set to 9600
 
 ### Program 0.0.2 (Squeeze)
   First stable program
   * Added new custom characters to the lcd screen.
   * the Current sensor was eliminated
   * the kp and kd where set in function with the experiment
+  * Baud-rate set to 19200
   * It uses P-D control to stabilze the temperature, while trying to get the set temp as fast as possible, it includes all the functions in the main sketch.
 
 ### Program 0.0.3 (Buster)
@@ -62,6 +64,7 @@
 
 ### Program 0.0.7 (Mike)
 * __Using the _NODEMCU-32s__: Third version: Tasks and multi-core processing.
+* Baud-rate set to 115200
 * Hard-coded HTML code to show data in the browser. (Requieres internet connection for showing some symbols)
 * Added landed (crude) web page to set the _setpoint_
 * Problem solved with the Global variables and the share between tasks: Only one archive _(.ino)__ for all and _no queues_
@@ -69,6 +72,7 @@
 ### Program 0.0.8 (Tango)
 * __Using the _NODEMCU-32s__: Last version in the Arduino IDE.
 * Final assambly without the [Mozilla IoT WebThings Framework](https://iot.mozilla.org/)
+* Baud-rate set to 115200
 * This code is marked as STABLE but with no release.
 
 ### Program 0.0.9 (Slinky)
@@ -77,11 +81,12 @@
 * In the source code located in /src/main.cpp you have to mannualy __set the SSID and the password of your WiFi Network__
 * This program __only reads the temperature of the ds18b20 sensor and then send it to the WebThings Server__  --> [How to build one on a Raspberry Pi 3?](https://iot.mozilla.org/docs/gateway-getting-started-guide.html)
 * Project name _webthing demo_, no screen, no PID Control, no setpoint.
+* Baud-rate set to 115200
 * __Very important!__: specific version of libraries are required to compile and run in the , _webthing-arduino 0.0.9_ , _PageBuilder 1.3.4_ and _arduinoJson 5.13.4_. the last one took a lot to catch...
 
 
 
-# How to work with this programs?
+# How to work with this programs? (from Version 0.0.1 to 0.0.7)
 
 To test this sketch's, you must install the library included in the arduino database.
 
